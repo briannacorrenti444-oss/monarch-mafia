@@ -42,12 +42,15 @@
 <body>
   <!-- Header Component -->
   <header class="header" role="banner">
-    <div class="container header__inner">
+    <div class="header__inner">
       <a href="/" class="header__logo" aria-label="Monarch Mafia - Home">
-        Monarch Mafia
+        <div class="header__logo-icon">
+          <img src="/images/monarch-mafia-logo.png" alt="">
+        </div>
+        <span class="header__logo-text">Monarch Mafia</span>
       </a>
 
-      <nav class="nav" role="navigation" aria-label="Main navigation">
+      <nav class="nav header__nav-wrapper" role="navigation" aria-label="Main navigation">
         <button
           class="nav__toggle"
           aria-label="Toggle navigation menu"
@@ -86,6 +89,20 @@
       <div class="container container--narrow">
         <div class="content-section">
           <h2 id="about-brianna" class="content-section__title">Brianna Correnti</h2>
+
+          <!-- Profile Photo -->
+          <img
+            src="/images/brianna-correnti.png"
+            alt="Brianna Correnti - Founder of Monarch Mafia"
+            style="
+              max-width: 280px;
+              border-radius: 8px;
+              margin-bottom: 2rem;
+              float: right;
+              margin-left: 2rem;
+              box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            "
+          >
 
           <p>
             Monarch Mafia is the professional and personal platform of Brianna Correnti — a space

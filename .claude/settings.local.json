@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nAdd enhanced design: gold gradients, carousel, logo, and header layout\n\n- Add profile image and monarch mafia logo\n- Enhance gold colors with gradient shimmer effects\n- Add horizontal auto-scrolling carousel for Areas of Focus\n- Add minimalist geometric background lines on all pages\n- Update header layout: logo at far left, title aligned with content\n- Consistent header structure across all 8 pages\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")"
+    ]
+  }
+}

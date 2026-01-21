@@ -230,6 +230,150 @@
   };
 
   /**
+   * Carousel Module
+   * Horizontal auto-scrolling carousel with arrow navigation
+   */
+  const Carousel = {
+    container: null,
+    track: null,
+    items: null,
+    prevBtn: null,
+    nextBtn: null,
+    indicators: null,
+    currentIndex: 0,
+    autoScrollInterval: null,
+    autoScrollDelay: 4000,
+    isPaused: false,
+
+    init: function () {
+      this.container = document.getElementById('goals-carousel');
+      if (!this.container) return;
+
+      this.track = document.getElementById('carousel-track');
+      this.items = this.track.querySelectorAll('.carousel__item');
+      this.prevBtn = document.getElementById('carousel-prev');
+      this.nextBtn = document.getElementById('carousel-next');
+      this.indicators = document.querySelectorAll('.carousel__indicator');
+
+      if (!this.track || this.items.length === 0) return;
+
+      this.bindEvents();
+      this.startAutoScroll();
+    },
+
+    bindEvents: function () {
+      // Arrow buttons
+      this.prevBtn.addEventListener('click', this.prev.bind(this));
+      this.nextBtn.addEventListener('click', this.next.bind(this));
+
+      // Indicator dots
+      this.indicators.forEach(function (indicator) {
+        indicator.addEventListener('click', this.handleIndicatorClick.bind(this));
+      }, this);
+
+      // Pause on hover
+      this.container.addEventListener('mouseenter', this.pause.bind(this));
+      this.container.addEventListener('mouseleave', this.resume.bind(this));
+
+      // Pause on focus within
+      this.container.addEventListener('focusin', this.pause.bind(this));
+      this.container.addEventListener('focusout', this.resume.bind(this));
+
+      // Handle touch/swipe
+      this.track.addEventListener('scroll', this.handleScroll.bind(this));
+
+      // Handle keyboard navigation
+      this.container.addEventListener('keydown', this.handleKeydown.bind(this));
+    },
+
+    handleIndicatorClick: function (e) {
+      var index = parseInt(e.target.getAttribute('data-index'), 10);
+      this.goTo(index);
+    },
+
+    handleScroll: function () {
+      // Update indicator based on scroll position
+      var scrollLeft = this.track.scrollLeft;
+      var itemWidth = this.items[0].offsetWidth + 24; // Including gap
+      var newIndex = Math.round(scrollLeft / itemWidth);
+
+      if (newIndex !== this.currentIndex && newIndex >= 0 && newIndex < this.items.length) {
+        this.currentIndex = newIndex;
+        this.updateIndicators();
+      }
+    },
+
+    handleKeydown: function (e) {
+      if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        this.prev();
+      } else if (e.key === 'ArrowRight') {
+        e.preventDefault();
+        this.next();
+      }
+    },
+
+    prev: function () {
+      var newIndex = this.currentIndex - 1;
+      if (newIndex < 0) {
+        newIndex = this.items.length - 1;
+      }
+      this.goTo(newIndex);
+    },
+
+    next: function () {
+      var newIndex = this.currentIndex + 1;
+      if (newIndex >= this.items.length) {
+        newIndex = 0;
+      }
+      this.goTo(newIndex);
+    },
+
+    goTo: function (index) {
+      this.currentIndex = index;
+      var itemWidth = this.items[0].offsetWidth + 24; // Including gap
+      var scrollPosition = index * itemWidth;
+
+      this.track.scrollTo({
+        left: scrollPosition,
+        behavior: 'smooth'
+      });
+
+      this.updateIndicators();
+    },
+
+    updateIndicators: function () {
+      this.indicators.forEach(function (indicator, i) {
+        indicator.classList.toggle('carousel__indicator--active', i === this.currentIndex);
+      }, this);
+    },
+
+    startAutoScroll: function () {
+      var self = this;
+      this.autoScrollInterval = setInterval(function () {
+        if (!self.isPaused) {
+          self.next();
+        }
+      }, this.autoScrollDelay);
+    },
+
+    stopAutoScroll: function () {
+      if (this.autoScrollInterval) {
+        clearInterval(this.autoScrollInterval);
+        this.autoScrollInterval = null;
+      }
+    },
+
+    pause: function () {
+      this.isPaused = true;
+    },
+
+    resume: function () {
+      this.isPaused = false;
+    }
+  };
+
+  /**
    * Initialize all modules on DOM ready
    */
   domReady(function () {
@@ -237,5 +381,6 @@
     ActiveNav.init();
     SmoothScroll.init();
     FormEnhancement.init();
+    Carousel.init();
   });
 })();

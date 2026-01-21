@@ -42,12 +42,15 @@
 <body>
   <!-- Header Component -->
   <header class="header" role="banner">
-    <div class="container header__inner">
+    <div class="header__inner">
       <a href="/" class="header__logo" aria-label="Monarch Mafia - Home">
-        Monarch Mafia
+        <div class="header__logo-icon">
+          <img src="/images/monarch-mafia-logo.png" alt="">
+        </div>
+        <span class="header__logo-text">Monarch Mafia</span>
       </a>
 
-      <nav class="nav" role="navigation" aria-label="Main navigation">
+      <nav class="nav header__nav-wrapper" role="navigation" aria-label="Main navigation">
         <button
           class="nav__toggle"
           aria-label="Toggle navigation menu"

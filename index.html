@@ -47,12 +47,15 @@
     Consider using a static site generator or server-side includes for DRY maintenance.
   -->
   <header class="header" role="banner">
-    <div class="container header__inner">
+    <div class="header__inner">
       <a href="/" class="header__logo" aria-label="Monarch Mafia - Home">
-        Monarch Mafia
+        <div class="header__logo-icon">
+          <img src="/images/monarch-mafia-logo.png" alt="">
+        </div>
+        <span class="header__logo-text">Monarch Mafia</span>
       </a>
 
-      <nav class="nav" role="navigation" aria-label="Main navigation">
+      <nav class="nav header__nav-wrapper" role="navigation" aria-label="Main navigation">
         <button
           class="nav__toggle"
           aria-label="Toggle navigation menu"
@@ -77,25 +80,44 @@
   <main class="main" id="main-content">
     <!-- Hero Section -->
     <section class="section section--hero" aria-labelledby="hero-title">
-      <div class="container">
-        <h1 id="hero-title" class="hero__title">Monarch Mafia</h1>
-        <p class="hero__subtitle">An impact platform founded by Brianna Correnti</p>
+      <div class="container" style="display: flex; flex-wrap: wrap; align-items: center; gap: 3rem;">
 
-        <div class="gold-line" aria-hidden="true"></div>
+        <!-- Hero Text -->
+        <div style="flex: 1; min-width: 300px;">
+          <h1 id="hero-title" class="hero__title">Monarch Mafia</h1>
+          <p class="hero__subtitle gold-shimmer">An impact platform founded by Brianna Correnti</p>
 
-        <p class="hero__tagline">
-          "From climate tech to community care — this is my work, my values, and my voice."
-        </p>
+          <div class="gold-line" aria-hidden="true"></div>
 
-        <p class="hero__supporting">
-          A long-term platform for building purpose-driven businesses, investing in people,
-          and creating space for meaningful work.
-        </p>
+          <p class="hero__tagline">
+            "From climate tech to community care — this is my work, my values, and my voice."
+          </p>
 
-        <div class="hero__cta">
-          <a href="/goals.html" class="btn btn--primary">Explore My Work</a>
-          <a href="/connect.html" class="btn btn--outline">Get in Touch</a>
+          <p class="hero__supporting">
+            A long-term platform for building purpose-driven businesses, investing in people,
+            and creating space for meaningful work.
+          </p>
+
+          <div class="hero__cta">
+            <a href="/goals.html" class="btn btn--primary">Explore My Work</a>
+            <a href="/connect.html" class="btn btn--outline">Get in Touch</a>
+          </div>
         </div>
+
+        <!-- Hero Photo -->
+        <div style="flex: 0 0 auto;">
+          <img
+            src="/images/brianna-correnti.png"
+            alt="Brianna Correnti - Founder of Monarch Mafia"
+            style="
+              max-width: 320px;
+              width: 100%;
+              border-radius: 8px;
+              box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4), 0 0 40px rgba(212, 175, 55, 0.1);
+            "
+          >
+        </div>
+
       </div>
     </section>
 
@@ -119,80 +141,105 @@
       </div>
     </section>
 
-    <!-- Goals Preview Section -->
+    <!-- Goals Preview Section - Horizontal Carousel -->
     <section class="section" aria-labelledby="goals-preview-title">
       <div class="container">
         <h2 id="goals-preview-title" class="text-center">Areas of Focus</h2>
         <div class="gold-line gold-line--center" aria-hidden="true"></div>
 
-        <div class="card-grid">
-          <!-- Climate Tech Card -->
-          <article class="card">
-            <svg class="card__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-            </svg>
-            <h3 class="card__title">Climate Tech</h3>
-            <p class="card__description">
-              Driving the transition to clean energy through innovation and commitment to sustainable solutions.
-            </p>
-            <a href="/goals/climate-tech.html" class="card__link">
-              Learn More
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+        <!-- Carousel Container -->
+        <div class="carousel" id="goals-carousel">
+          <div class="carousel__container" id="carousel-track">
+            <!-- Climate Tech Card -->
+            <article class="card carousel__item">
+              <svg class="card__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
               </svg>
-            </a>
-          </article>
+              <h3 class="card__title">Climate Tech</h3>
+              <p class="card__description">
+                Driving the transition to clean energy through innovation and commitment to sustainable solutions.
+              </p>
+              <a href="/goals/climate-tech.html" class="card__link">
+                Learn More
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </a>
+            </article>
 
-          <!-- Health Card -->
-          <article class="card">
-            <svg class="card__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-            </svg>
-            <h3 class="card__title">Health</h3>
-            <p class="card__description">
-              Exploring relational psychology, mental wellness, and the wisdom found in philosophy and human development.
-            </p>
-            <a href="/goals/health.html" class="card__link">
-              Learn More
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            <!-- Health Card -->
+            <article class="card carousel__item">
+              <svg class="card__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
               </svg>
-            </a>
-          </article>
+              <h3 class="card__title">Health</h3>
+              <p class="card__description">
+                Exploring relational psychology, mental wellness, and the wisdom found in philosophy and human development.
+              </p>
+              <a href="/goals/health.html" class="card__link">
+                Learn More
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </a>
+            </article>
 
-          <!-- Culture Card -->
-          <article class="card">
-            <svg class="card__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-            </svg>
-            <h3 class="card__title">Culture</h3>
-            <p class="card__description">
-              Poetry, writing, STEM education, and preserving humanity in an increasingly automated world.
-            </p>
-            <a href="/goals/culture.html" class="card__link">
-              Learn More
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            <!-- Culture Card -->
+            <article class="card carousel__item">
+              <svg class="card__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
               </svg>
-            </a>
-          </article>
+              <h3 class="card__title">Culture</h3>
+              <p class="card__description">
+                Poetry, writing, STEM education, and preserving humanity in an increasingly automated world.
+              </p>
+              <a href="/goals/culture.html" class="card__link">
+                Learn More
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </a>
+            </article>
 
-          <!-- Community Card -->
-          <article class="card">
-            <svg class="card__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-            </svg>
-            <h3 class="card__title">Community</h3>
-            <p class="card__description">
-              Homeless outreach, care package assembly, and hands-on service that puts people first.
-            </p>
-            <a href="/goals/community.html" class="card__link">
-              Learn More
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            <!-- Community Card -->
+            <article class="card carousel__item">
+              <svg class="card__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
               </svg>
-            </a>
-          </article>
+              <h3 class="card__title">Community</h3>
+              <p class="card__description">
+                Homeless outreach, care package assembly, and hands-on service that puts people first.
+              </p>
+              <a href="/goals/community.html" class="card__link">
+                Learn More
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </a>
+            </article>
+          </div>
+
+          <!-- Carousel Navigation -->
+          <div class="carousel__nav">
+            <button class="carousel__arrow" id="carousel-prev" aria-label="Previous slide">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+
+            <div class="carousel__indicators" id="carousel-indicators">
+              <button class="carousel__indicator carousel__indicator--active" data-index="0" aria-label="Go to slide 1"></button>
+              <button class="carousel__indicator" data-index="1" aria-label="Go to slide 2"></button>
+              <button class="carousel__indicator" data-index="2" aria-label="Go to slide 3"></button>
+              <button class="carousel__indicator" data-index="3" aria-label="Go to slide 4"></button>
+            </div>
+
+            <button class="carousel__arrow" id="carousel-next" aria-label="Next slide">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
     </section>
