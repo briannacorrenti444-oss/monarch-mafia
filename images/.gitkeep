@@ -1,0 +1,17 @@
+# Images Directory
+
+This directory is for site images. Recommended structure:
+
+/images/
+  ├── og-image.jpg          # OpenGraph social sharing (1200x630px)
+  ├── apple-touch-icon.png  # iOS home screen icon (180x180px)
+  └── community/            # Community service photos
+      ├── outreach-1.jpg
+      ├── outreach-2.jpg
+      └── ...
+
+Image Guidelines:
+- Optimize all images for web before uploading
+- Use descriptive filenames (e.g., "care-package-assembly.jpg")
+- Recommended formats: WebP, JPEG, PNG
+- Update alt text in HTML when adding images

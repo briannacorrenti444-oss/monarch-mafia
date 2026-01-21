@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- Primary Meta Tags -->
+  <title>Connect | Monarch Mafia</title>
+  <meta name="title" content="Connect | Monarch Mafia">
+  <meta name="description" content="Get in touch with Brianna Correnti. Whether for collaboration, conversation, or connection — reach out here.">
+  <meta name="author" content="Brianna Correnti">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://monarchmafia.com/connect.html">
+  <meta property="og:title" content="Connect | Monarch Mafia">
+  <meta property="og:description" content="Get in touch for collaboration, conversation, or connection.">
+  <meta property="og:image" content="https://monarchmafia.com/images/og-image.jpg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://monarchmafia.com/connect.html">
+  <meta property="twitter:title" content="Connect | Monarch Mafia">
+  <meta property="twitter:description" content="Get in touch for collaboration, conversation, or connection.">
+  <meta property="twitter:image" content="https://monarchmafia.com/images/og-image.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+  <!-- Preconnect to external resources -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <!-- Header Component -->
+  <header class="header" role="banner">
+    <div class="container header__inner">
+      <a href="/" class="header__logo" aria-label="Monarch Mafia - Home">
+        Monarch Mafia
+      </a>
+
+      <nav class="nav" role="navigation" aria-label="Main navigation">
+        <button
+          class="nav__toggle"
+          aria-label="Toggle navigation menu"
+          aria-expanded="false"
+          aria-controls="nav-list"
+        >
+          <span class="nav__toggle-bar"></span>
+          <span class="nav__toggle-bar"></span>
+          <span class="nav__toggle-bar"></span>
+        </button>
+
+        <ul class="nav__list" id="nav-list">
+          <li><a href="/" class="nav__link">Home</a></li>
+          <li><a href="/about.html" class="nav__link">About</a></li>
+          <li><a href="/goals.html" class="nav__link">Goals</a></li>
+          <li><a href="/connect.html" class="nav__link nav__link--active" aria-current="page">Connect</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main" id="main-content">
+    <!-- Page Header -->
+    <header class="page-header">
+      <div class="container">
+        <h1 class="page-header__title">Connect</h1>
+        <div class="gold-line gold-line--center" aria-hidden="true"></div>
+        <p class="page-header__description">
+          Interested in collaboration, conversation, or just want to say hello?
+          I'd love to hear from you.
+        </p>
+      </div>
+    </header>
+
+    <!-- Contact Form Section -->
+    <section class="section" aria-labelledby="contact-form-title">
+      <div class="container container--narrow">
+        <h2 id="contact-form-title" class="visually-hidden">Contact Form</h2>
+
+        <!--
+          NETLIFY FORMS IMPLEMENTATION:
+          - data-netlify="true" enables Netlify form handling
+          - name="contact" identifies the form in Netlify dashboard
+          - netlify-honeypot="bot-field" provides spam protection
+          - action="/success.html" would redirect to a success page (optional)
+          - Form submissions appear in Netlify dashboard > Forms
+
+          NOTE: For Netlify Forms to work:
+          1. Site must be deployed to Netlify
+          2. Form must include data-netlify="true" attribute
+          3. Form must have a name attribute
+        -->
+        <form
+          name="contact"
+          method="POST"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+          class="contact-form"
+          aria-describedby="form-description"
+        >
+          <!-- Hidden field for form name (required by Netlify) -->
+          <input type="hidden" name="form-name" value="contact">
+
+          <!-- Honeypot field for spam protection (hidden from users) -->
+          <p class="visually-hidden">
+            <label>
+              Don't fill this out if you're human:
+              <input name="bot-field">
+            </label>
+          </p>
+
+          <p id="form-description" class="text-muted" style="margin-bottom: var(--space-2xl); font-size: var(--text-sm);">
+            All fields marked with an asterisk (*) are required.
+          </p>
+
+          <div class="form__group">
+            <label for="name" class="form__label">
+              Name <span aria-hidden="true">*</span>
+            </label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              class="form__input"
+              required
+              autocomplete="name"
+              aria-required="true"
+              placeholder="Your name"
+            >
+          </div>
+
+          <div class="form__group">
+            <label for="email" class="form__label">
+              Email <span aria-hidden="true">*</span>
+            </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="form__input"
+              required
+              autocomplete="email"
+              aria-required="true"
+              placeholder="your.email@example.com"
+            >
+          </div>
+
+          <div class="form__group">
+            <label for="subject" class="form__label">
+              Subject
+            </label>
+            <input
+              type="text"
+              id="subject"
+              name="subject"
+              class="form__input"
+              placeholder="What's this about?"
+            >
+          </div>
+
+          <div class="form__group">
+            <label for="message" class="form__label">
+              Message <span aria-hidden="true">*</span>
+            </label>
+            <textarea
+              id="message"
+              name="message"
+              class="form__textarea"
+              required
+              aria-required="true"
+              placeholder="Your message..."
+              rows="6"
+            ></textarea>
+          </div>
+
+          <div class="form__group" style="margin-top: var(--space-xl);">
+            <button type="submit" class="btn btn--primary" style="width: 100%;">
+              Send Message
+            </button>
+          </div>
+        </form>
+
+        <!-- Alternative Contact Methods -->
+        <div class="content-section" style="margin-top: var(--space-4xl);">
+          <h2 class="content-section__title">Other Ways to Connect</h2>
+
+          <p>
+            Prefer other platforms? You can also find me on:
+          </p>
+
+          <ul style="margin-top: var(--space-lg); list-style: none;">
+            <li style="margin-bottom: var(--space-md);">
+              <a href="https://linkedin.com/in/[INSERT-LINKEDIN-USERNAME]" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: var(--space-sm);">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                </svg>
+                LinkedIn
+                <span class="visually-hidden">(opens in new tab)</span>
+              </a>
+            </li>
+            <!-- Add additional social links as needed -->
+          </ul>
+
+          <p class="text-muted" style="margin-top: var(--space-xl); font-size: var(--text-sm);">
+            Please note: I try to respond to all messages, but it may take a few days
+            depending on volume. Thank you for your patience.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer Component -->
+  <footer class="footer" role="contentinfo">
+    <div class="container footer__inner">
+      <span class="footer__logo">Monarch Mafia</span>
+
+      <nav class="footer__nav" aria-label="Footer navigation">
+        <a href="/" class="footer__link">Home</a>
+        <a href="/about.html" class="footer__link">About</a>
+        <a href="/goals.html" class="footer__link">Goals</a>
+        <a href="/connect.html" class="footer__link">Connect</a>
+      </nav>
+
+      <p class="footer__copyright">
+        &copy; <span id="current-year">2025</span> Monarch Mafia. All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+  </script>
+  <script src="/js/main.js"></script>
+</body>
+</html>
